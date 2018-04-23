@@ -182,13 +182,26 @@ sys.setdefaultencoding('utf8')
 #     print(info + ': ' + user_profile[info])
 
 #8-14
-def make_car(manufacture, model, **car_info):
-    profile = {}
-    profile['manufacture_name'] = manufacture
-    profile['model_name'] = model
-    for k,v in car_info.items():
-        profile[k] = v
-    return profile
+# def make_car(manufacture, model, **car_info):
+#     profile = {}
+#     profile['manufacture_name'] = manufacture
+#     profile['model_name'] = model
+#     for k,v in car_info.items():
+#         profile[k] = v
+#     return profile
 
-car = make_car('Audi', 'A6L', color='blue', tow_package='True')
-print(car)
+# car = make_car('Audi', 'A6L', color='blue', tow_package='True')
+# print(car)
+
+#p133
+# import pizza as p
+
+# p.make_pizza(16, 'pepperoni')
+# p.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+
+#p135
+from pizza import make_pizza as mp
+
+mp(16, 'pepperoni')
+mp(12, 'mushrooms', 'green peppers', 'extra cheese')
+
