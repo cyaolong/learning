@@ -7,30 +7,33 @@ sys.setdefaultencoding('utf8')
 #字符串->hex
 def char_to_hex(str):
     hex = str.encode('utf8').encode('hex')
-    print hex
+    print (hex)
 
 #hex->字符串
 def hex_to_char(str):
     char = str.decode('hex')
-    print char
+    print (char)
 
-#输入q可随时退出
+#输入中文，转换为hex（输入q可随时退出）
 while True:
-    choose = input('Please choose y/n for ChartoHex/HextoChar: ')
+    choose = raw_input('Please choose y/n for ChartoHex/HextoChar: ')
     if choose == 'q':
         break
     elif choose == 'y':
         while True:
-            word = input('Please input a word(or q to go back): ')
+            word = raw_input('Please input words(or q to go back): ')
+            word_list = map(str, word.split(","))
             if word == 'q':
                 break
             else:
-                char_to_hex(word)
+                map(char_to_hex, word_list)
 
+#输入hex，转换为中文
     elif choose == 'n':
         while True:
-            hex = input('Please input a hex(or q to go back): ')
+            hex = raw_input('Please input hex strings(or q to go back): ')
+            hex_list = map(str, hex.split(","))
             if hex == 'q':
                 break
             else:
-                hex_to_char(hex)
+                map(hex_to_char, hex_list)
